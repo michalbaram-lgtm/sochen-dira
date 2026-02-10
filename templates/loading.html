@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מתחיל לעבוד בשבילך...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Heebo', sans-serif; }
+        
+        .progress-item {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .spinner {
+            border: 3px solid #e5e7eb;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .checkmark {
+            display: none;
+            color: #10b981;
+            font-size: 20px;
+        }
+        
+        .progress-item.completed .spinner {
+            display: none;
+        }
+        
+        .progress-item.completed .checkmark {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full mx-auto px-4">
+        <div class="text-center mb-12">
+            <div class="text-6xl mb-4">🏠</div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">מתחיל לעבוד בשבילך...</h1>
+            <p class="text-gray-600">זה לוקח רגע, אבל שווה את ההמתנה</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+            <div class="space-y-4" id="progressList">
+                <!-- Progress items will be added here dynamically -->
+            </div>
+        </div>
+
+        <div class="text-center mt-8 text-sm text-gray-500">
+            <p>הסוכן שלך עובד במקביל על כמה מקורות...</p>
+        </div>
+    </div>
+
+    <script>
+        const tasks = [
+            { text: "מתחבר ליד2...", delay: 500 },
+            { text: "סורק מודעות חדשות ביד2...", delay: 1500 },
+            { text: "בודק מודעות במדלן...", delay: 2200 },
+            { text: "מחפש בקבוצות פייסבוק...", delay: 3000 },
+            { text: "מסנן דירות לפי ההעדפות שלך...", delay: 3800 },
+            { text: "מנתח התאמות...", delay: 4500 },
+            { text: "מכין את הדשבורד שלך...", delay: 5200 }
+        ];
+
+        const progressList = document.getElementById('progressList');
+        
+        // Add all tasks with progressive animation
+        tasks.forEach((task, index) => {
+            setTimeout(() => {
+                const item = document.createElement('div');
+                item.className = 'progress-item flex items-center gap-3';
+                item.style.animationDelay = '0s';
+                item.innerHTML = `
+                    <div class="spinner"></div>
+                    <div class="checkmark">✓</div>
+                    <span class="text-gray-700">${task.text}</span>
+                `;
+                progressList.appendChild(item);
+                
+                // Mark as completed after a short delay
+                setTimeout(() => {
+                    item.classList.add('completed');
+                }, 800);
+                
+            }, task.delay);
+        });
+
+        // Redirect to dashboard after all tasks complete
+        setTimeout(() => {
+            window.location.href = '/dashboard';
+        }, 6500);
+    </script>
+</body>
+</html>

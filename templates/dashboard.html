@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הדשבורד שלי - הסוכן לנדל"ן</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Heebo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900">הסוכן שלך לנדל"ן</h1>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-600">שלום, מיקי 👋</span>
+                    <button class="text-sm text-blue-600 hover:text-blue-700">הגדרות</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Summary Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-gray-600 text-sm font-medium">חיפושים היום</h3>
+                    <span class="text-2xl">🔍</span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900">127</p>
+                <p class="text-sm text-green-600 mt-1">+12 מאתמול</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-gray-600 text-sm font-medium">נכסים חדשים</h3>
+                    <span class="text-2xl">🏠</span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900">8</p>
+                <p class="text-sm text-blue-600 mt-1">מתאימים להעדפות שלך</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-gray-600 text-sm font-medium">בהתאמה מושלמת</h3>
+                    <span class="text-2xl">⭐</span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900">3</p>
+                <p class="text-sm text-purple-600 mt-1">כדאי לבדוק!</p>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Activity Feed -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h2 class="text-xl font-bold mb-4">מה הסוכן עשה בשבילך היום</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- Activity Item -->
+                        <div class="flex gap-4 pb-4 border-b">
+                            <div class="text-2xl">✅</div>
+                            <div class="flex-1">
+                                <p class="font-medium text-gray-900">סיימתי לסרוק את יד2</p>
+                                <p class="text-sm text-gray-600 mt-1">127 נכסים חדשים בתל אביב ורמת גן</p>
+                                <p class="text-xs text-gray-400 mt-1">לפני 5 דקות</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 pb-4 border-b">
+                            <div class="text-2xl">🎯</div>
+                            <div class="flex-1">
+                                <p class="font-medium text-gray-900">מצאתי 8 נכסים מתאימים</p>
+                                <p class="text-sm text-gray-600 mt-1">3-4 חדרים, עם חניה, בתקציב שלך</p>
+                                <p class="text-xs text-gray-400 mt-1">לפני 8 דקות</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 pb-4 border-b">
+                            <div class="text-2xl">⭐</div>
+                            <div class="flex-1">
+                                <p class="font-medium text-gray-900">3 נכסים בהתאמה מושלמת!</p>
+                                <p class="text-sm text-gray-600 mt-1">דירות בצפון הישן - כל מה שביקשת</p>
+                                <p class="text-xs text-gray-400 mt-1">לפני 10 דקות</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 pb-4 border-b">
+                            <div class="text-2xl">🔍</div>
+                            <div class="flex-1">
+                                <p class="font-medium text-gray-900">בודק עכשיו את מדלן</p>
+                                <p class="text-sm text-gray-600 mt-1">מחפש התאמות נוספות...</p>
+                                <p class="text-xs text-gray-400 mt-1">בתהליך</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="text-2xl">📧</div>
+                            <div class="flex-1">
+                                <p class="font-medium text-gray-900">העדכון היומי בדרך אליך</p>
+                                <p class="text-sm text-gray-600 mt-1">אשלח לך מייל עם כל הממצאים בעוד כשעה</p>
+                                <p class="text-xs text-gray-400 mt-1">מתוכנן ל-18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matched Properties Placeholder -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h2 class="text-xl font-bold mb-4">הנכסים שמצאתי היום</h2>
+                    <div class="text-center py-8 text-gray-500">
+                        <p class="text-4xl mb-2">🏗️</p>
+                        <p>הסוכן עדיין עובד...</p>
+                        <p class="text-sm mt-2">התוצאות יופיעו כאן בקרוב</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Search Preferences -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold">ההעדפות שלך</h3>
+                        <button class="text-sm text-blue-600 hover:text-blue-700">ערוך</button>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <p class="text-gray-600">מחפש</p>
+                            <p class="font-medium">דירה לקנייה</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">אזורים</p>
+                            <p class="font-medium">תל אביב, רמת גן</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">תקציב</p>
+                            <p class="font-medium">עד 3.5M ₪</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">חדרים</p>
+                            <p class="font-medium">3-4 חדרים</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">חובה</p>
+                            <p class="font-medium">מעלית, חניה</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Summary -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
+                    <h3 class="font-bold mb-3">סיכום השבוע</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">נכסים שנבדקו</span>
+                            <span class="font-medium">847</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">התאמות שמצאתי</span>
+                            <span class="font-medium">34</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">המלצות מובילות</span>
+                            <span class="font-medium">12</span>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition">
+                        ראה סיכום מלא
+                    </button>
+                </div>
+
+                <!-- Next Search -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">⏰</span>
+                        <div>
+                            <h3 class="font-bold text-sm">החיפוש הבא</h3>
+                            <p class="text-xs text-gray-600">מחר, 09:00</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600">אתחיל יום חדש של חיפושים ואשלח לך עדכון בבוקר</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
