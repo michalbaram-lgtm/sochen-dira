@@ -54,40 +54,12 @@ def save_onboarding():
     data = request.json
     
     try:
-        conn = sqlite3.connect('agent.db')
-        c = conn.cursor()
+        # For MVP: Just save to session, skip database
+        session['user_data'] = data
+        session['user_id'] = 1  # Temporary user ID
         
-        # Save user
-        c.execute('INSERT INTO users (email, name, phone) VALUES (?, ?, ?)',
-                 (data['email'], data.get('name'), data.get('phone')))
-        user_id = c.lastrowid
-        
-        # Save preferences
-        c.execute('''INSERT INTO preferences 
-                    (user_id, search_type, cities, neighborhoods, min_price, max_price, 
-                     rooms, property_types, must_haves, deal_breakers, additional_notes, co_searchers)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                 (user_id, 
-                  data['searchType'],
-                  json.dumps(data.get('cities', [])),
-                  json.dumps(data.get('neighborhoods', [])),
-                  data.get('minPrice'),
-                  data.get('maxPrice'),
-                  json.dumps(data.get('rooms', [])),
-                  json.dumps(data.get('propertyTypes', [])),
-                  json.dumps(data.get('mustHaves', [])),
-                  json.dumps(data.get('dealBreakers', [])),
-                  data.get('additionalNotes'),
-                  data.get('coSearchers')))
-        
-        conn.commit()
-        conn.close()
-        
-        session['user_id'] = user_id
         return jsonify({'success': True, 'redirect': '/loading'})
     
-    except sqlite3.IntegrityError:
-        return jsonify({'success': False, 'error': 'Email already registered'}), 400
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
